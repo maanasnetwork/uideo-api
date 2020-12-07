@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+# Compile project
+RUN mix do compile
+
+# Phx server start
+exec mix phx.server
+

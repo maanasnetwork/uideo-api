@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+# Wait until Postgres is ready
+while ! pg_isready -q -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER
+do
+  echo "$(date) - waiting for database to start"
+  sleep 2
+done
+
+echo 'PostgreSQL is available'
+
+exec "$@"

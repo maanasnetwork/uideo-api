@@ -1,0 +1,39 @@
+version: '3.7'
+
+volumes:
+  local_postgres_data: {}
+
+services:
+  phoenix: &phoenix
+    build:
+      context: .
+      dockerfile: ./docker/phoenix/Dockerfile
+    image: uideo_phoenix
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+    env_file:
+      - ./.envs/.local/.phoenix
+      - ./.envs/.local/.postgres
+    ports:
+      - "4000:4000"
+    # command: /start
+    command: "tail -F anything"
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./docker/postgres/Dockerfile
+    image: uideo_postgres
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data
+      - ./backups:/backups
+    env_file:
+      - ./.envs/.local/.postgres
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:5.0
+
