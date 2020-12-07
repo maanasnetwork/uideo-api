@@ -5,8 +5,8 @@ set -o pipefail
 set -o nounset
 
 # Compile project
-RUN mix do compile
+# mix do compile
 
 # Phx server start
-exec mix phx.server
-
+# exec mix phx.server
+# iex -S mix phx.server

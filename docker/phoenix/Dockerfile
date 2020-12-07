@@ -20,6 +20,6 @@ COPY ./docker/phoenix/start /start
 RUN sed -i 's/\r$//g' /start
 RUN chmod +x /start
 
-WORKDIR /app
+WORKDIR /app/uideo
 
 ENTRYPOINT ["/entrypoint"]
