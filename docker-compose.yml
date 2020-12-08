@@ -18,8 +18,8 @@ services:
       - ./.envs/.local/.postgres
     ports:
       - "4000:4000"
-    # command: /start
-    command: "tail -F anything"
+    command: /start
+    # command: "tail -F anything"
 
   postgres:
     build:
