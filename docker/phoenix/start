@@ -4,9 +4,6 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-# Compile project
-# mix do compile
-
 # Phx server start
 # exec mix phx.server
 # iex -S mix phx.server

@@ -7,7 +7,7 @@ defmodule UideoWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_uideo_key",
-    signing_salt: "JP/7xUxj"
+    signing_salt: "ubV+hPun"
   ]
 
   socket "/socket", UideoWeb.UserSocket,
@@ -29,8 +29,6 @@ defmodule UideoWeb.Endpoint do
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
-    socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
-    plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
     plug Phoenix.Ecto.CheckRepoStatus, otp_app: :uideo
   end

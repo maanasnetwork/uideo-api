@@ -9,6 +9,7 @@ RUN apt-get update && \
 # By using --force, we don’t need to type “Y” to confirm the installation
 RUN mix local.hex --force
 RUN mix archive.install hex phx_new 1.5.7 --force
+RUN mix local.rebar --force
 
 # Copy entrypoint
 COPY ./docker/phoenix/entrypoint /entrypoint

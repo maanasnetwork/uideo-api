@@ -13,10 +13,10 @@ config :uideo,
 # Configures the endpoint
 config :uideo, UideoWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "u3824b8rBSljc/UGd1Wzbaa8yRHuBmOJhdN1KEUIE78dzm3I27rMawuPmX8+b9ed",
-  render_errors: [view: UideoWeb.ErrorView, accepts: ~w(html json), layout: false],
+  secret_key_base: "/6C0Kw/MZYxBOAPbQtT5XfRZM0uJ/1DMG5HQSF3dmz72Cb0b7Yj3pyQtIb0eV7hF",
+  render_errors: [view: UideoWeb.ErrorView, accepts: ~w(json), layout: false],
   pubsub_server: Uideo.PubSub,
-  live_view: [signing_salt: "wEANomLw"]
+  live_view: [signing_salt: "lX5bf3Vx"]
 
 # Configures Elixir's Logger
 config :logger, :console,
